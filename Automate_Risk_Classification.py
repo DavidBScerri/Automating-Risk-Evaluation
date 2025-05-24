@@ -15,6 +15,7 @@ Original file is located at
 
 import wandb
 wandb.login()
+# You can find your API key in your browser here: https://wandb.ai/authorize
 
 from google.colab import drive
 drive.mount('/content/drive')
