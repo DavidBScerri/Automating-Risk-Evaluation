@@ -28,7 +28,7 @@ import pandas as pd
 import ast
 
 # Load the EU AI Act CSV
-df_eu = pd.read_csv('/content/drive/MyDrive/Thesis/EU_AI_Act_Dataset/eu_ai_act_2024_pdf_with_payload_v2.csv')
+df_eu = pd.read_csv('/content/drive/MyDrive/Automating-Risk-Evaluation/EU_AI_Act_Dataset/eu_ai_act_2024_pdf_with_payload_v2.csv')
 
 df_eu["meta_data"] = df_eu["meta_data"].apply(ast.literal_eval)
 
@@ -251,11 +251,11 @@ trainer = Trainer(
 
 trainer.train()
 
-trainer.save_model("/content/drive/MyDrive/Thesis/legal_pretrained_model")
+trainer.save_model("/content/drive/MyDrive/Automating-Risk-Evaluation/legal_pretrained_model")
 
 """## Training Risk Classification Model"""
 
-model_name = "/content/drive/MyDrive/Thesis/legal_pretrained_model"
+model_name = "/content/drive/MyDrive/Automating-Risk-Evaluation/legal_pretrained_model"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=len(label2id))
 
@@ -314,7 +314,7 @@ trainer = Trainer(
 
 trainer.train()
 
-trainer.save_model("/content/drive/MyDrive/Thesis/risk_trained_model")
+trainer.save_model("/content/drive/MyDrive/Automating-Risk-Evaluation/risk_trained_model")
 
 """# Experiment
 
@@ -323,12 +323,12 @@ trainer.save_model("/content/drive/MyDrive/Thesis/risk_trained_model")
 
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-legal_model_name = "/content/drive/MyDrive/Thesis/legal_pretrained_model"
+legal_model_name = "/content/drive/MyDrive/Automating-Risk-Evaluation/legal_pretrained_model"
 legal_tokenizer = AutoTokenizer.from_pretrained(legal_model_name)
 legal_model = AutoModelForSequenceClassification.from_pretrained(legal_model_name, num_labels=len(label2id))
 legal_model.to("cuda")
 
-risk_model_name = "/content/drive/MyDrive/Thesis/risk_trained_model"
+risk_model_name = "/content/drive/MyDrive/Automating-Risk-Evaluation/risk_trained_model"
 risk_tokenizer = AutoTokenizer.from_pretrained(risk_model_name)
 risk_model = AutoModelForSequenceClassification.from_pretrained(risk_model_name, num_labels=len(label2id))
 risk_model.to("cuda")
