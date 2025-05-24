@@ -15,7 +15,6 @@ Original file is located at
 
 import wandb
 wandb.login()
-# 4163c634f0d1bd683d73748952a171e830ee4895
 
 from google.colab import drive
 drive.mount('/content/drive')
@@ -35,7 +34,7 @@ df_eu["meta_data"] = df_eu["meta_data"].apply(ast.literal_eval)
 
 # Extract the most relevant legal identifier from the metadata
 def extract_label(meta):
-    for item in meta[::-1]:  # reverse to prefer more recent context (like articles over preambles)
+    for item in meta[::-1]: 
         if item.get("article"):
             return f'{item["article"]}: {item.get("article_title", "")}'.strip()
         elif item.get("chapter"):
