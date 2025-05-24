@@ -46,4 +46,4 @@ Follow the notebook cells sequentially to load models, preprocess documents, cla
 ## 📁 File Structure
 
  - Automate_Risk_Classification.ipynb: Main notebook for classification and evaluation.
- - EU_AI_Act_Dataset/: Example legal and company policy documents.
+ - EU_AI_Act_Dataset/: the EU AI Act dataset from https://www.kaggle.com/datasets/konradb/eu-ai-act-complete-text
