@@ -11,7 +11,7 @@ The aim was to build a model capable of classifying AI systems according to the 
 
 - Python (Jupyter Notebook)
 - Google Colab
-- Transformers (joelniklaus/legal-xlm-roberta-base)
+- Transformers ([joelniklaus/legal-xlm-roberta-base](https://huggingface.co/joelniklaus/legal-xlm-roberta-base))
 - LIME for interpretability
 - Scikit-learn, Pandas, Numpy
 - Google Drive for file access
